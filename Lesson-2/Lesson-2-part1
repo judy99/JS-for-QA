@@ -1,0 +1,134 @@
+// 1
+// Rewrite if with ?
+// let result; if (a + b < 10) { result = 'Few'; } else { result = 'Many'; }
+
+// **************************************************
+// **** SOLUTION ****
+// **************************************************
+let result = (a + b < 10) ? 'Few' : 'Many'
+
+// 2
+// Write an if condition to verify that the age variable is between 18 and 90 inclusive.
+// Inclusive means that the value of age can be either 18 or 90.
+
+// **************************************************
+// **** SOLUTION ****
+// **************************************************
+if (age >= 18 && age <= 90) {
+    return true
+} else {
+    return false
+}
+
+// 3
+// I recommend you to run code in browser console, since it allows easy usage of user input parsing with prompt method.
+// prompt() // Use to get input from user if needed
+// alert() // To output with alert
+// Log available everywhere (browser or nodejs): console.log()
+
+// Write script that will
+// accept user name
+// welcome user with his usernam
+// ask his birthday year
+// calculate how old is user, and print (or alert) his calculated age
+// Example: -> Please, enter your first name <- Mykola -> Hello, Mykola, nice to meet you. -> Please enter your birthday year <- 1900 -> 119 years
+
+// **************************************************
+// **** SOLUTION ****
+// **************************************************
+const username = prompt('Please, enter your first name:')
+alert(`Hello, ${username}, nice to meet you.`)
+const year = Number(prompt('Please enter your birthday year:'))
+const currentYear = new Date().getFullYear()
+const age =  currentYear - year
+alert(`You are ${age} years old.`)
+
+// 4
+// Write a script which will convert number into corresponding letter, and print(or alert) result:
+// The grades should be computed as follows : 
+// Range Grade:
+// <60 F
+// <70 D
+// <80 C
+// <90 B
+// <100 A
+// Example: for number 92 - print "A" for number 29 - print "F"
+
+// **************************************************
+// **** SOLUTION ****
+// **************************************************
+const grade = Number(prompt())
+if (grade < 60) {
+    console.log('F')
+} else if (grade >= 60 && grade < 70) {
+    console.log('D')
+} else if (grade >= 70 && grade < 80) {
+    console.log('C')   
+} else if (grade >= 80 && grade < 90) {
+    console.log('B') 
+} else {
+    console.log('A')
+}
+
+// **************************************************
+// **** SOLUTION WITH SWITCH ****
+// **************************************************
+
+const grade = +prompt("Please enter a number: ")
+switch (grade) {
+    case 61 :
+    case 62 :
+    case 63 :
+    case 64 :
+    case 65 :
+    case 66 :
+    case 67 :
+    case 68 :
+    case 69 :
+    case 70 :
+    console.log('D')
+    break
+
+    case 71 :
+    case 72 :
+    case 73 :
+    case 74 :
+    case 75 :
+    case 76 :
+    case 77 :
+    case 78 :
+    case 79 :
+    case 80 :
+    console.log('C')
+    break
+
+    case 81 :
+    case 82 :
+    case 83 :
+    case 84 :
+    case 85 :
+    case 87 :
+    case 87 :
+    case 88 :
+    case 89 :
+    case 90 :
+    console.log('B')
+    break
+
+    case 91 :
+    case 92 :
+    case 93 :
+    case 94 :
+    case 95 :
+    case 97 :
+    case 97 :
+    case 98 :
+    case 99 :
+    case 100 :
+    console.log('A')
+    break
+
+    default:
+        if (grade <= 60) 
+            console.log('F')
+}
