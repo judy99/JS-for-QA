@@ -1,0 +1,68 @@
+// Ex.1
+ let a = 1
+ let b = 1
+
+ let c = ++a;
+//  order of operations
+// 0)  initial state: a = 1
+// 1) 'a' got the value after incrementing => a = 2,
+// 2) 'c' assigned to the current 'a' => c = 2,
+// 3)  a = 2, c = 2
+
+ let d = b++;
+//  order of operations
+// 0)  initial state: b = 1
+// 2) 'b' got the value before incrementing => b = 1, then
+// 1) 'd' assigned to the current 'b' => d = 1, then
+// 2) 'b' got the value after incrementing => b = 2, then
+// 3)  b = 2, d = 1
+
+// Try to guess what is the value should returned inside the a, b, c, d variables below
+
+// **************************************************
+// **** SOLUTION ****
+// **************************************************
+//  for more clarification see the comments above
+
+// console.log(a); // => 2
+
+// console.log(b); // => 2
+
+// console.log(c); // => 2
+
+// console.log(d); // => 1
+
+// Ex. 2
+// Use a switch statement to log the following string for the given 'language':
+// chinese or mandarin: 'MOST number of native speakers!'
+// spanish: '2nd place in number of native speakers'
+// english: '3rd place'
+// hindi: 'Number 4'
+// arabic: '5th most spoken language'
+// for all other simply log 'Great language too :D'
+
+// **************************************************
+// **** SOLUTION ****
+// **************************************************
+const language = prompt().toLowerCase();
+
+switch(language) {
+    case 'chinese':
+    case 'mandarin':
+        console.log('MOST number of native speakers!')
+        break
+    case 'spanish':
+        console.log('2nd place in number of native speakers')
+        break
+    case 'english':
+        console.log('3rd place')
+        break
+    case 'hindi':
+        console.log('Number 4')
+        break
+    case 'arabic':
+        console.log('5th most spoken language')
+        break
+    default:
+        console.log('Great language too :D')
+}
