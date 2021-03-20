@@ -91,7 +91,7 @@ const maxNumber = (a = 0, b = 0) => {
     if ((typeof a) === 'number' && (typeof b) === 'number') {
         return (a > b) ? a : b
     } else {
-        return 'Error'
+        return 'Please type valid function argument data'
     }
 }
 
@@ -104,7 +104,12 @@ let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 }
 const sumSalaries = (salaries) => {
     let sum = 0
         for (let key in salaries) {
-            sum += salaries[key]
+            if (typeof salaries[key] === 'number' && salaries[key] >= 0) {
+                sum += salaries[key]
+            } else {
+                console.log('Invalid data')
+                return -1
+            }
         }
         return sum
 }
@@ -116,20 +121,16 @@ console.log(sumSalaries(salaries))
 // We have an object storing salaries of our team:
 // let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 } 
 // Write the function that returns name and value of employer that gets biggest salary
-//????
 
 let salaries = { Mykola: 250, Pavlo: 250, Petro: 500 }
 
 const getMaxSalaryEmployees = (obj) => {
-    let maxSalary = 0
     let maxSalaryEmployees = []
-    
-    // get the max salary
-    for (let key in salaries) {
-            if (obj[key] >= maxSalary) {
-                maxSalary = obj[key]
-            }
-    }
+
+    const salary = Object.values(obj)
+    const maxSalary = salary.reduce((mx, salary) => {
+        return (mx >= salary) ? mx : salary
+    })
 
     // get all employees with the max salary
     for (let key in salaries) {
@@ -137,10 +138,8 @@ const getMaxSalaryEmployees = (obj) => {
             maxSalaryEmployees = [ ...maxSalaryEmployees, { [key]: obj[key] } ]
         }    
     }
-
     return maxSalaryEmployees
 }
-
 console.log(getMaxSalaryEmployees(salaries))
 
 // 4.
