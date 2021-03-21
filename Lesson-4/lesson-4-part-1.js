@@ -8,9 +8,8 @@
 // - array of objects
 // Each value should have different array index
 
-const f = () => {
-    console.log('hi')
-}
+const f = () => console.log('hi')
+
 const person = {firstName: 'Vasya', lastName: 'Pupkin'}
 const auth = {login: 'login@net.com', password: '123', checked: true}
 
