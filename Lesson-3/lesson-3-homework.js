@@ -54,6 +54,15 @@ const getPropsList = () => {
     console.log('Object is empty')
 }
 
+// ***************
+// better solution
+// ***************
+
+for (let key in post){
+    console.log(key)
+    console.log(post[key])
+};
+
 // 2.
 // Write the function called "helloColleagues" which should accept two parameter 
 // "company" and "team" and should return the string with 
@@ -78,7 +87,15 @@ console.log(helloColleagues('Google'))
 
 const isEmpty = (obj) => {
     return Object.keys(obj).length ? false : true
-} 
+}
+
+// *******
+// another solution
+// *******
+let isEmpty = (obj) => {
+    return !Object.keys(obj).length;
+}
+
 
 let schedule = {};
 console.log(isEmpty(schedule));
@@ -142,6 +159,32 @@ const getMaxSalaryEmployees = (obj) => {
 }
 console.log(getMaxSalaryEmployees(salaries))
 
+
+// another solution for 1 employee 
+// ********
+let salaries = { 
+    Mykola: 250, 
+    Pavlo: 250, 
+    Petro: 500 
+};
+
+function getBiggestSalary (salariesObject) {
+    let highestSalary = 0;
+    let richestEmployeeName = '';
+    for (let key in salariesObject) {
+        if (highestSalary <= salariesObject[key]) {
+            highestSalary = salariesObject[key]; // first iteration 250, second iteration 250
+            richestEmployeeName = key; // first it Mykola, Petro
+        }
+    }
+    return {  // you can return any data type
+        name: richestEmployeeName,
+        salary: highestSalary
+    };
+}
+
+getBiggestSalary(salaries);
+
 // 4.
 // Create a function multiplyNumeric(obj) that multiplies all numeric properties of obj by 2.
 // For instance:
@@ -185,3 +228,13 @@ const showStars = (rows) => {
 }
 
 showStars(4)
+
+// another solution 
+function showStars(rows){
+    let star = "";
+    for (let row = 0; row < rows; row ++) {
+        star += "*"; 
+        console.log(star);
+      }
+    }
+    showStars (4); 
