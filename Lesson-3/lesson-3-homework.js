@@ -196,7 +196,10 @@ getBiggestSalary(salaries);
 
 const multiplyNumeric = (obj) => {
     for (let key in obj) {
-        if (typeof obj[key] === 'number') obj[key] = obj[key] * 2 
+        if (typeof obj[key] === 'number') obj[key] = obj[key] * 2
+        else {
+            console.log('Wrong data type for multiplying')
+        }
     }
 }
 
