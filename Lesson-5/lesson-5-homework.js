@@ -101,3 +101,21 @@ const carColor = new CarColor("Renault", "Scenic", "Red");
 
 console.log(carColor); // should display new object
 console.log(carColor.carColor()); // Should display string "Renault Scenic has Red color"
+
+// Second part
+
+// Потрібно знайти і пофіксити помилку при ініціалізації Child класу
+class Parent {
+	constructor(name) {
+		this.name = name;
+	}
+}
+class Child extends Parent {
+	constructor(name) {
+        super(name);
+		this.created = Date.now();
+	}
+}
+
+let rabbit = new Child("White Rabbit"); // Тут буде помилка - "Error: this is not defined"
+console.log(rabbit.name);
